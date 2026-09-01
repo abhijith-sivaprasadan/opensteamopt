@@ -1,0 +1,17 @@
+.venv/
+.tools/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.firecrawl/
+build/
+dist/
+*.egg-info/
+*.fmu
+*.mat
+*.log
+OpenSteamOptPlant/
+runs/
+.streamlit/secrets.toml

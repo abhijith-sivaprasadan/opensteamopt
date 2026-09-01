@@ -1,0 +1,10 @@
+loadModel(Modelica);
+loadFile("../../modelica/OpenSteamOpt/package.mo");
+getErrorString();
+buildModelFMU(
+  OpenSteamOpt.TwoBoilerSteamPlant,
+  version="2.0",
+  fmuType="cs",
+  fileNamePrefix="OpenSteamOptPlant"
+);
+getErrorString();

@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "kind": "synthetic_educational_reference_not_plant_validation",
+  "scenarios": [
+    "base",
+    "power_price_spike",
+    "high_carbon"
+  ],
+  "plant": {
+    "boilers": [
+      {
+        "name": "B1",
+        "fuel": "natural_gas",
+        "min_steam_tph": 20.0,
+        "midpoint_steam_tph": 50.0,
+        "max_steam_tph": 80.0,
+        "efficiency_at_min": 0.82,
+        "efficiency_at_mid": 0.9,
+        "efficiency_at_max": 0.87,
+        "ramp_up_tph_per_hour": 28.0,
+        "ramp_down_tph_per_hour": 32.0,
+        "startup_cost_eur": 600.0,
+        "emission_tco2_per_mwh_fuel": 0.202,
+        "time_constant_seconds": 90.0
+      },
+      {
+        "name": "B2",
+        "fuel": "biofuel",
+        "min_steam_tph": 15.0,
+        "midpoint_steam_tph": 37.5,
+        "max_steam_tph": 60.0,
+        "efficiency_at_min": 0.72,
+        "efficiency_at_mid": 0.8,
+        "efficiency_at_max": 0.78,
+        "ramp_up_tph_per_hour": 18.0,
+        "ramp_down_tph_per_hour": 22.0,
+        "startup_cost_eur": 450.0,
+        "emission_tco2_per_mwh_fuel": 0.035,
+        "time_constant_seconds": 150.0
+      }
+    ],
+    "steam_energy_mwh_per_tonne": 0.75,
+    "turbine_max_flow_tph": 55.0,
+    "turbine_power_mw_per_tph": 0.12,
+    "turbine_variable_om_eur_per_mwh": 15.0,
+    "turbine_ramp_tph_per_hour": 30.0,
+    "prv_max_flow_tph": 70.0,
+    "grid_import_limit_mw": 12.0,
+    "grid_export_limit_mw": 8.0,
+    "export_price_fraction": 0.9,
+    "hp_pressure_nominal_bar": 50.0,
+    "mp_pressure_nominal_bar": 10.0,
+    "hp_pressure_gain_bar_per_tonne": 0.08,
+    "mp_pressure_gain_bar_per_tonne": 0.12,
+    "turbine_time_constant_seconds": 45.0,
+    "prv_time_constant_seconds": 12.0,
+    "pressure_trim_gain_tph_per_bar": 2.0,
+    "unmet_steam_penalty_eur_per_tonne": 20000.0,
+    "unmet_power_penalty_eur_per_mwh": 30000.0
+  },
+  "solver": "HiGHS via Pyomo",
+  "files": {
+    "base-baseline.csv": "45806510641313b8d21d378e15137499a6d1873147cd0ec489e667984083e558",
+    "base-optimized.csv": "a7a27a4518546f2a9ad0fe2da87957a0b574b9f2885c8acc0df67998dfb9a010",
+    "base-shadow-trace.csv": "77173119421b4d04ba096a681544599ddf288a10bc519ba340005a1c2624fbc6",
+    "high_carbon-baseline.csv": "0a83953b7a746ddcf15f19bef107f3d38cb3b5675c97c4f49861dead492f6f90",
+    "high_carbon-optimized.csv": "3b8866e1399dcb6e84dfeddb99e99c3af4e766df5d07d12c5ed6eab005cf38a2",
+    "power_price_dispatch.png": "32e489ca2453d32f06fb08632981d2ea43cf322f8175c34c5e61ff06541909cf",
+    "power_price_spike-baseline.csv": "c8f8eda3c0dac463c28e8e6d1516fb21191502e6a5c2c037dd2817f706422bf9",
+    "power_price_spike-optimized.csv": "ecf60cb02953d8d67d789664f8a7434467037dbd6b2236a5789b46a424280272",
+    "scenario-kpis.csv": "c48af7220a55e82d7a9c726edfa2b9844014cfbba1b64c3ef86812e80767b7ef",
+    "shadow-kpis.json": "2542539cbdb5063f8a1f9593bd95c0d7a4710c36778bc6572b6d7cf9ef171460",
+    "shadow_pressures.png": "707db23c519a4c48a721774b2018b984aefd60a65d2a1fa0ced3ff7c8ea1ddd2",
+    "steam_dispatch.png": "c4324eac60265698fd51a0271e250140df473d22e099bc1500ecff0e03951476"
+  }
+}

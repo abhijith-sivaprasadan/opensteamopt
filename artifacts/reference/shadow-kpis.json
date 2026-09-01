@@ -1,0 +1,7 @@
+{
+  "hp_pressure_max_deviation_bar": 1.385408501751776,
+  "mp_pressure_max_deviation_bar": 4.590089000000332,
+  "hp_pressure_standard_deviation_bar": 0.5437461385132939,
+  "mp_pressure_standard_deviation_bar": 1.5905694331797509,
+  "max_dynamic_mass_imbalance_tph": 31.076666666666785
+}

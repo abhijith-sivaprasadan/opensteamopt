@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "kind": "local_fmu_build_and_simulation_not_plant_validation",
+  "model": "OpenSteamOpt.TwoBoilerSteamPlant",
+  "fmi_version": "2.0",
+  "fmi_type": "CoSimulation",
+  "openmodelica": "OpenModelica v1.27.0 (64-bit)",
+  "modelica_source_sha256": "fa010cc711dd0a48b84575c656cd9247bfe7a3513e884004f9741f88dc01f8ca",
+  "fmu_sha256": "f354f8c08d76c6997981f523e0ba7cb73bcae0d6ccf460efce4967acf4efa1e4",
+  "fmu_bytes": 1100228,
+  "samples": 1441,
+  "start_time_seconds": 0.0,
+  "stop_time_seconds": 86400.0,
+  "outputs_finite": true,
+  "hp_pressure_bar": {
+    "min": 49.347687541424456,
+    "max": 50.566070002333475
+  },
+  "mp_pressure_bar": {
+    "min": 10.0,
+    "max": 11.491116630791467
+  },
+  "limitations": [
+    "Synthetic grey-box dynamics; no plant measurements or steam-property library.",
+    "Setpoints are applied only to the local FMU; no DCS, OPC UA or actuator connection.",
+    "The proportional pressure trim is not model-predictive control."
+  ]
+}
