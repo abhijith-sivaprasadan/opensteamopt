@@ -145,3 +145,9 @@ proprietary parameters are included. Product names belong to their respective ow
 Code and project-authored documentation are released under the [MIT License](LICENSE).
 Use [CITATION.cff](CITATION.cff) when citing the software. External product names and
 linked material remain subject to their owners' terms.
+
+
+<!-- ci-workflow-coverage -->
+## Continuous integration
+
+See [CI coverage and limitations](CI.md) for the automated checks. The status badge tracks the published CI review branch.
