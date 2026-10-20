@@ -33,6 +33,10 @@ jobs:
         run: uv sync --all-extras --frozen
       - name: Tests
         run: uv run python -m pytest -q
+      - name: Fresh reference optimisation replay
+        run: |
+          uv run python scripts/run_reference.py --output .ci-reference
+          uv run python -c "import pandas as pd,numpy as np; ref=pd.read_csv('artifacts/reference/scenario-kpis.csv').sort_values('scenario').reset_index(drop=True); got=pd.read_csv('.ci-reference/scenario-kpis.csv').sort_values('scenario').reset_index(drop=True); assert list(ref.columns)==list(got.columns) and len(ref)==len(got)==3; assert ref['scenario'].tolist()==got['scenario'].tolist(); cols=ref.select_dtypes(include='number').columns; np.testing.assert_allclose(ref[cols].to_numpy(),got[cols].to_numpy(),rtol=1e-6,atol=1e-6); assert got['max_balance_residual'].abs().max()<1e-8; print('Three synthetic scenarios match committed reference within tolerance')"
       - name: Ruff
         run: |
           uv run ruff format --check .
